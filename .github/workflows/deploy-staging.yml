@@ -1,0 +1,13 @@
+name: deploy-staging
+on:
+  workflow_dispatch:
+    inputs:
+      note:
+        description: free text
+        required: false
+        default: ''
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deployed ${GITHUB_REF_NAME} (${GITHUB_SHA})"
